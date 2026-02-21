@@ -999,51 +999,51 @@ const PHASES = [
     id:'1.1', name:'Project Management Package', color:'1.1',
     tasks:[
       { id:'M1',    name:'◆ Charter Submitted',              sw:4,  ew:4,  owner:'Team', milestone:true, progress:100 },
-      { id:'1.1.1', name:'Charter & Scope Statement',        sw:3,  ew:4,  owner:'Team', critical:true, progress:100 },
-      { id:'1.1.2', name:'WBS Development',                  sw:4,  ew:5,  owner:'Team', critical:true, progress:100 },
+      { id:'1.1.1', name:'Draft Charter and Define Scope',        sw:3,  ew:4,  owner:'Team', critical:true, progress:100 },
+      { id:'1.1.2', name:'Build WBS Outline and Numbering',                  sw:4,  ew:5,  owner:'Team', critical:true, progress:100 },
       { id:'M2',    name:'◆ WBS Submitted',                  sw:5,  ew:5,  owner:'Team', milestone:true, progress:100 },
-      { id:'1.1.3', name:'Schedule Baseline (draft)',         sw:5,  ew:6,  owner:'KO', critical:true, progress:80 },
-      { id:'1.1.4', name:'Budget & Resource Plan',            sw:6,  ew:7,  owner:'DM', progress:60 },
-      { id:'1.1.5', name:'Risk & Issue Log',                  sw:7,  ew:8,  owner:'KO', progress:40 },
+      { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline',         sw:5,  ew:6,  owner:'KO', critical:true, progress:80 },
+      { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan',            sw:6,  ew:7,  owner:'DM', progress:60 },
+      { id:'1.1.5', name:'Create Risk Register and Score Risks',                  sw:7,  ew:8,  owner:'KO', progress:40 },
       { id:'M3',    name:'◆ First Draft Plan Due',            sw:8,  ew:8,  owner:'KO', milestone:true, progress:0 },
-      { id:'1.1.6', name:'Governance & Change Control Plan',  sw:8,  ew:9,  owner:'KO', progress:20 },
-      { id:'1.1.7', name:'RACI Matrix',                       sw:9,  ew:10, owner:'SR', progress:0 },
+      { id:'1.1.6', name:'Draft Governance and Change Control Approach',  sw:8,  ew:9,  owner:'KO', progress:20 },
+      { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',                       sw:9,  ew:10, owner:'SR', progress:0 },
     ]
   },
   {
     id:'1.2', name:'Program Design Package', color:'1.2',
     tasks:[
-      { id:'1.2.1', name:'Target Population Definition',          sw:5, ew:6, owner:'DM', progress:90 },
-      { id:'1.2.2', name:'Service Model & Workflow Design',        sw:6, ew:8, owner:'DM', critical:true, progress:70 },
-      { id:'1.2.3', name:'Caregiver Enablement Approach',          sw:7, ew:9, owner:'RN', progress:50 },
-      { id:'1.2.4', name:'Training Plan for Seniors & Caregivers', sw:8, ew:10, owner:'LR', progress:20 },
+      { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort',          sw:5, ew:6, owner:'DM', progress:90 },
+      { id:'1.2.2', name:'Design Service Model and Workflow',        sw:6, ew:8, owner:'DM', critical:true, progress:70 },
+      { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities',          sw:7, ew:9, owner:'RN', progress:50 },
+      { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', sw:8, ew:10, owner:'LR', progress:20 },
     ]
   },
   {
     id:'1.3', name:'Technology & Data Package', color:'1.3',
     tasks:[
-      { id:'1.3.1', name:'PHA Functional Requirements',           sw:6, ew:8, owner:'ZH', critical:true, progress:60 },
-      { id:'1.3.2', name:'Data Inputs & Tracking Templates',      sw:7, ew:9, owner:'ZH', progress:40 },
-      { id:'1.3.3', name:'Doctor-Ready Summary Template',         sw:8, ew:10, owner:'ZH', progress:20 },
-      { id:'1.3.4', name:'Privacy, Security & Consent Approach',  sw:9, ew:11, owner:'ZH', progress:0 },
+      { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool',           sw:6, ew:8, owner:'ZH', critical:true, progress:60 },
+      { id:'1.3.2', name:'Define Data Tracking Categories and Templates',      sw:7, ew:9, owner:'ZH', progress:40 },
+      { id:'1.3.3', name:'Design Doctor-Ready Summary Format',         sw:8, ew:10, owner:'ZH', progress:20 },
+      { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach',  sw:9, ew:11, owner:'ZH', progress:0 },
     ]
   },
   {
     id:'1.4', name:'Stakeholder & Communications Package', color:'1.4',
     tasks:[
-      { id:'1.4.1', name:'Stakeholder Register',              sw:5, ew:6, owner:'SR', progress:90 },
-      { id:'1.4.2', name:'Communications Plan',               sw:6, ew:8, owner:'RN', critical:true, progress:60 },
-      { id:'1.4.3', name:'Partner Engagement Materials',      sw:8, ew:10, owner:'SR', progress:20 },
+      { id:'1.4.1', name:'Build Stakeholder Register',              sw:5, ew:6, owner:'SR', progress:90 },
+      { id:'1.4.2', name:'Draft Communications Plan',               sw:6, ew:8, owner:'RN', critical:true, progress:60 },
+      { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials',      sw:8, ew:10, owner:'SR', progress:20 },
     ]
   },
   {
     id:'1.5', name:'Funding & Go-to-Market Package', color:'1.5',
     tasks:[
-      { id:'1.5.1', name:'Funding Strategy & Criteria Mapping',     sw:8,  ew:10, owner:'LR', critical:true, progress:20 },
-      { id:'1.5.2', name:'Cost-Benefit & ROI Narrative',             sw:9,  ew:11, owner:'LR', critical:true, progress:10 },
-      { id:'1.5.3', name:'Pilot Rollout Plan (phases)',              sw:10, ew:11, owner:'DM', progress:0 },
-      { id:'1.5.4', name:'Final Proposal Deck / Submission Package', sw:10, ew:12, owner:'KO', critical:true, progress:0 },
-      { id:'1.5.5', name:'Success Metrics Framework',                sw:10, ew:11, owner:'SR', progress:0 },
+      { id:'1.5.1', name:'Map Proposal Content to Funding Criteria',     sw:8,  ew:10, owner:'LR', critical:true, progress:20 },
+      { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes',             sw:9,  ew:11, owner:'LR', critical:true, progress:10 },
+      { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics',              sw:10, ew:11, owner:'DM', progress:0 },
+      { id:'1.5.4', name:'Assemble and Review Final Submission Package', sw:10, ew:12, owner:'KO', critical:true, progress:0 },
+      { id:'1.5.5', name:'Create Success Measurement Tracking Framework',                sw:10, ew:11, owner:'SR', progress:0 },
       { id:'M4',    name:'◆ Final Submission - Apr 1',               sw:12, ew:12, owner:'KO', milestone:true, progress:0 },
     ]
   }
