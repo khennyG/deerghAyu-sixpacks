@@ -1062,7 +1062,7 @@ const fixedCols = [
   {label:'Assigned To', cls:'col-owner', rowspan:3},
   {label:'Start Date',  cls:'col-start', rowspan:3},
   {label:'End Date',    cls:'col-end',   rowspan:3},
-  {label:'Duration',    cls:'col-dur',   rowspan:3},
+  {label:'Duration (days)',    cls:'col-dur',   rowspan:3},
   {label:'Progress',    cls:'col-prog',  rowspan:3},
 ];
 fixedCols.forEach(c => {
@@ -1212,7 +1212,8 @@ PHASES.forEach(phase => {
     // Duration
     const tdDur = document.createElement('td');
     tdDur.className = 'td-dur';
-    tdDur.textContent = isMilestone ? '-' : (dur===1?'1 wk':dur+' wks');
+    const days = dur * 5;
+    tdDur.textContent = isMilestone ? '-' : (days===1?'1 day':days+' days');
     tdDur.style.cssText = `border:1px solid #EEF0F5;padding:5px 4px;text-align:center;font-size:10px;color:#666`;
     tr.appendChild(tdDur);
 
@@ -1376,6 +1377,13 @@ const NET_PHASES = {
 const CP = '#C0392B';
 const CP_LIGHT = '#FFF0EE';
 
+// Week to date mapping
+const WEEK_DATES = {
+  1: 'Jan 7', 2: 'Jan 14', 3: 'Jan 21', 4: 'Jan 28',
+  5: 'Feb 4', 6: 'Feb 11', 7: 'Feb 18', 8: 'Feb 25',
+  9: 'Mar 11', 10: 'Mar 18', 11: 'Mar 25', 12: 'Apr 1', 13: 'Apr 8'
+};
+
 const NODES = [
   { id:'START', name:'PROJECT START', phase:'1.1', dur:0, ES:3, EF:3, LS:3, LF:3, float:0, critical:true, isStart:true },
   { id:'1.1.1', name:'Charter & Scope Statement',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true },
@@ -1489,7 +1497,8 @@ NODES.forEach(node => {
   const bgColor = isCrit ? CP_LIGHT : '#FFFFFF';
   const floatBg = isCrit ? CP_LIGHT : '#F0F7FF';
   const floatTxt = isCrit ? CP : '#1B5AB4';
-  const floatLabel = isCrit ? 'Float = 0 · CRITICAL' : `Float = ${node.float} wk${node.float!==1?'s':''}`;
+  const floatDays = node.float * 5;
+  const floatLabel = isCrit ? 'Float = 0 · CRITICAL' : `Float = ${floatDays} day${floatDays!==1?'s':''}`;
 
   const g = mkEl('g', { class:'node-group', transform:`translate(${x},${y})` });
 
@@ -1533,8 +1542,8 @@ NODES.forEach(node => {
     const lblEl = mkEl('text', { x:cx, y:cy+8, 'text-anchor':'middle', fill:'#888', 'font-size':'7', 'font-family':'Inter,sans-serif' });
     lblEl.textContent = lbl;
     g.appendChild(lblEl);
-    const valEl = mkEl('text', { x:cx, y:cy+18, 'text-anchor':'middle', fill:'#1A1A2E', 'font-size':'9.5', 'font-weight':'700', 'font-family':'Inter,sans-serif' });
-    valEl.textContent = 'W'+node[lbl];
+    const valEl = mkEl('text', { x:cx, y:cy+18, 'text-anchor':'middle', fill:'#1A1A2E', 'font-size':'7.5', 'font-weight':'700', 'font-family':'Inter,sans-serif' });
+    valEl.textContent = WEEK_DATES[node[lbl]];
     g.appendChild(valEl);
   });
   g.appendChild(mkEl('line', { x1:colW, y1:gridY, x2:colW, y2:gridY+52, stroke:'#EEF0F5', 'stroke-width':'1' }));
@@ -1547,7 +1556,8 @@ NODES.forEach(node => {
   g.appendChild(mkEl('rect', { x:0, y:floatY, width:NW, height:6, fill:floatBg }));
   const floatTextY = floatY + (floatBarHeight / 2) + 3;
   const durTxt = mkEl('text', { x:10, y:floatTextY, fill:'#555', 'font-size':'9', 'font-weight':'600', 'font-family':'Inter,sans-serif' });
-  durTxt.textContent = `${node.dur} wk${node.dur!==1?'s':''}  •`;
+  const durDays = node.dur * 5;
+  durTxt.textContent = `${durDays} day${durDays!==1?'s':''}  •`;
   g.appendChild(durTxt);
   const floatTxtEl = mkEl('text', { x:NW-10, y:floatTextY, 'text-anchor':'end', fill:floatTxt, 'font-size':'9', 'font-weight':'700', 'font-family':'Inter,sans-serif' });
   floatTxtEl.textContent = floatLabel;
