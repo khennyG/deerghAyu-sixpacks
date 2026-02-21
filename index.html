@@ -1386,29 +1386,29 @@ const WEEK_DATES = {
 
 const NODES = [
   { id:'START', name:'PROJECT START', phase:'1.1', dur:0, ES:3, EF:3, LS:3, LF:3, float:0, critical:true, isStart:true },
-  { id:'1.1.1', name:'Charter & Scope Statement',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true },
-  { id:'1.1.2', name:'WBS Development',                  phase:'1.1', dur:2, ES:4, EF:5, LS:4, LF:5,  float:0, critical:true },
-  { id:'1.1.3', name:'Schedule Baseline',                phase:'1.1', dur:2, ES:5, EF:6, LS:7, LF:8,  float:2, critical:false },
-  { id:'1.1.4', name:'Budget & Resource Plan',           phase:'1.1', dur:2, ES:6, EF:7, LS:8, LF:9,  float:2, critical:false },
-  { id:'1.1.5', name:'Risk & Issue Log',                 phase:'1.1', dur:2, ES:7, EF:8, LS:9, LF:10, float:2, critical:false },
-  { id:'1.1.6', name:'Governance & Change Control',      phase:'1.1', dur:2, ES:8, EF:9, LS:10,LF:11, float:2, critical:false },
-  { id:'1.1.7', name:'RACI Matrix',                      phase:'1.1', dur:2, ES:9, EF:10,LS:10,LF:11, float:1, critical:false },
-  { id:'1.2.1', name:'Target Population Definition',     phase:'1.2', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
-  { id:'1.2.2', name:'Service Model & Workflow Design',  phase:'1.2', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
-  { id:'1.2.3', name:'Caregiver Enablement Approach',    phase:'1.2', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
-  { id:'1.2.4', name:'Training Plan for Seniors',        phase:'1.2', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.1', name:'PHA Functional Requirements',      phase:'1.3', dur:3, ES:5, EF:7, LS:5, LF:7,  float:0, critical:true },
-  { id:'1.3.2', name:'Data Inputs & Tracking Templates', phase:'1.3', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
-  { id:'1.3.3', name:'Doctor-Ready Summary Template',    phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.4', name:'Privacy, Security & Consent',      phase:'1.3', dur:3, ES:9, EF:11,LS:9, LF:11, float:0, critical:true },
-  { id:'1.4.1', name:'Stakeholder Register',             phase:'1.4', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
-  { id:'1.4.2', name:'Communications Plan',              phase:'1.4', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
-  { id:'1.4.3', name:'Partner Engagement Materials',     phase:'1.4', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.5.1', name:'Funding Strategy & Criteria',      phase:'1.5', dur:3, ES:10,EF:12,LS:10,LF:12, float:0, critical:true },
-  { id:'1.5.2', name:'Cost-Benefit & ROI Narrative',     phase:'1.5', dur:3, ES:9, EF:11,LS:10,LF:12, float:1, critical:false },
-  { id:'1.5.3', name:'Pilot Rollout Plan (phases)',      phase:'1.5', dur:2, ES:10,EF:11,LS:11,LF:12, float:1, critical:false },
-  { id:'1.5.4', name:'Final Proposal Deck',              phase:'1.5', dur:3, ES:11,EF:13,LS:11,LF:13, float:0, critical:true },
-  { id:'1.5.5', name:'Success Metrics Framework',        phase:'1.5', dur:2, ES:11,EF:12,LS:12,LF:13, float:1, critical:false },
+  { id:'1.1.1', name:'Draft Charter and Define Scope',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true },
+  { id:'1.1.2', name:'Build WBS Outline and Numbering',       phase:'1.1', dur:2, ES:4, EF:5, LS:4, LF:5,  float:0, critical:true },
+  { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline', phase:'1.1', dur:2, ES:5, EF:6, LS:7, LF:8,  float:2, critical:false },
+  { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan', phase:'1.1', dur:2, ES:6, EF:7, LS:8, LF:9,  float:2, critical:false },
+  { id:'1.1.5', name:'Create Risk Register and Score Risks',  phase:'1.1', dur:2, ES:7, EF:8, LS:9, LF:10, float:2, critical:false },
+  { id:'1.1.6', name:'Draft Governance and Change Control Approach', phase:'1.1', dur:2, ES:8, EF:9, LS:10,LF:11, float:2, critical:false },
+  { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',    phase:'1.1', dur:2, ES:9, EF:10,LS:10,LF:11, float:1, critical:false },
+  { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort', phase:'1.2', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
+  { id:'1.2.2', name:'Design Service Model and Workflow',     phase:'1.2', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
+  { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities', phase:'1.2', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
+  { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', phase:'1.2', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
+  { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool', phase:'1.3', dur:3, ES:5, EF:7, LS:5, LF:7,  float:0, critical:true },
+  { id:'1.3.2', name:'Define Data Tracking Categories and Templates', phase:'1.3', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
+  { id:'1.3.3', name:'Design Doctor-Ready Summary Format',    phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
+  { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach', phase:'1.3', dur:3, ES:9, EF:11,LS:9, LF:11, float:0, critical:true },
+  { id:'1.4.1', name:'Build Stakeholder Register',            phase:'1.4', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
+  { id:'1.4.2', name:'Draft Communications Plan',             phase:'1.4', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
+  { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials', phase:'1.4', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
+  { id:'1.5.1', name:'Map Proposal Content to Funding Criteria', phase:'1.5', dur:3, ES:10,EF:12,LS:10,LF:12, float:0, critical:true },
+  { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes', phase:'1.5', dur:3, ES:9, EF:11,LS:10,LF:12, float:1, critical:false },
+  { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics', phase:'1.5', dur:2, ES:10,EF:11,LS:11,LF:12, float:1, critical:false },
+  { id:'1.5.4', name:'Assemble and Review Final Submission Package', phase:'1.5', dur:3, ES:11,EF:13,LS:11,LF:13, float:0, critical:true },
+  { id:'1.5.5', name:'Create Success Measurement Tracking Framework', phase:'1.5', dur:2, ES:11,EF:12,LS:12,LF:13, float:1, critical:false },
   { id:'END', name:'PROJECT END', phase:'1.5', dur:0, ES:13,EF:13,LS:13,LF:13, float:0, critical:true, isEnd:true },
 ];
 
@@ -1525,8 +1525,15 @@ NODES.forEach(node => {
   g.appendChild(phaseTxt);
 
   const words = node.name.split(' ');
-  let line1 = '', line2 = '';
-  words.forEach(w => { if ((line1 + ' ' + w).trim().length <= 22) line1 = (line1+' '+w).trim(); else line2 = (line2+' '+w).trim(); });
+  let line1 = '', line2 = '', useLine2 = false;
+  words.forEach(w => { 
+    if (!useLine2 && (line1 + ' ' + w).trim().length <= 22) {
+      line1 = (line1+' '+w).trim();
+    } else {
+      useLine2 = true;
+      line2 = (line2+' '+w).trim();
+    }
+  });
   const name1 = mkEl('text', { x:NW/2, y:34, 'text-anchor':'middle', fill:'#1A1A2E', 'font-size':'8.5', 'font-weight':'600', 'font-family':'Inter,sans-serif' });
   name1.textContent = line1;
   g.appendChild(name1);
