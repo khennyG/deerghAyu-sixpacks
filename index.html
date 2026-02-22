@@ -1377,38 +1377,45 @@ const NET_PHASES = {
 const CP = '#C0392B';
 const CP_LIGHT = '#FFF0EE';
 
-// Week to date mapping
+// Week to date mapping (start of week for ES/LS)
 const WEEK_DATES = {
-  1: 'Jan 7', 2: 'Jan 14', 3: 'Jan 21', 4: 'Jan 28',
-  5: 'Feb 4', 6: 'Feb 11', 7: 'Feb 18', 8: 'Feb 25',
-  9: 'Mar 11', 10: 'Mar 18', 11: 'Mar 25', 12: 'Apr 1', 13: 'Apr 8'
+  1:'Jan 7', 2:'Jan 14', 3:'Jan 21', 4:'Jan 28',
+  5:'Feb 4', 6:'Feb 11', 7:'Feb 18', 8:'Feb 25',
+  9:'Mar 11', 10:'Mar 18', 11:'Mar 25', 12:'Apr 1', 13:'Apr 8'
+};
+
+// Week to date mapping (end of week for EF/LF)
+const WEEK_END_DATES = {
+  1:'Jan 13', 2:'Jan 20', 3:'Jan 27', 4:'Feb 3',
+  5:'Feb 10', 6:'Feb 17', 7:'Feb 24', 8:'Mar 3',
+  9:'Mar 17', 10:'Mar 24', 11:'Mar 31', 12:'Apr 1', 13:'Apr 7'
 };
 
 const NODES = [
   { id:'START', name:'PROJECT START', phase:'1.1', dur:0, ES:3, EF:3, LS:3, LF:3, float:0, critical:true, isStart:true },
   { id:'1.1.1', name:'Draft Charter and Define Scope',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true },
-  { id:'1.1.2', name:'Build WBS Outline and Numbering',       phase:'1.1', dur:2, ES:4, EF:5, LS:4, LF:5,  float:0, critical:true },
-  { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline', phase:'1.1', dur:2, ES:5, EF:6, LS:7, LF:8,  float:2, critical:false },
-  { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan', phase:'1.1', dur:2, ES:6, EF:7, LS:8, LF:9,  float:2, critical:false },
-  { id:'1.1.5', name:'Create Risk Register and Score Risks',  phase:'1.1', dur:2, ES:7, EF:8, LS:9, LF:10, float:2, critical:false },
-  { id:'1.1.6', name:'Draft Governance and Change Control Approach', phase:'1.1', dur:2, ES:8, EF:9, LS:10,LF:11, float:2, critical:false },
-  { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',    phase:'1.1', dur:2, ES:9, EF:10,LS:10,LF:11, float:1, critical:false },
+  { id:'1.1.2', name:'Build WBS Outline and Numbering',       phase:'1.1', dur:2, ES:4, EF:6, LS:4, LF:6,  float:0, critical:true },
+  { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline', phase:'1.1', dur:2, ES:7, EF:7, LS:9, LF:9,  float:2, critical:false },
+  { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan', phase:'1.1', dur:2, ES:8, EF:9, LS:10, LF:10,  float:2, critical:false },
+  { id:'1.1.5', name:'Create Risk Register and Score Risks',  phase:'1.1', dur:2, ES:9, EF:10, LS:10, LF:11, float:1, critical:false },
+  { id:'1.1.6', name:'Draft Governance and Change Control Approach', phase:'1.1', dur:2, ES:11, EF:11, LS:12,LF:12, float:1, critical:false },
+  { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',    phase:'1.1', dur:2, ES:11, EF:11,LS:12,LF:12, float:1, critical:false },
   { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort', phase:'1.2', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
   { id:'1.2.2', name:'Design Service Model and Workflow',     phase:'1.2', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
   { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities', phase:'1.2', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
   { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', phase:'1.2', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool', phase:'1.3', dur:3, ES:5, EF:7, LS:5, LF:7,  float:0, critical:true },
+  { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool', phase:'1.3', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
   { id:'1.3.2', name:'Define Data Tracking Categories and Templates', phase:'1.3', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
   { id:'1.3.3', name:'Design Doctor-Ready Summary Format',    phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach', phase:'1.3', dur:3, ES:9, EF:11,LS:9, LF:11, float:0, critical:true },
+  { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach', phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
   { id:'1.4.1', name:'Build Stakeholder Register',            phase:'1.4', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
   { id:'1.4.2', name:'Draft Communications Plan',             phase:'1.4', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
   { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials', phase:'1.4', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.5.1', name:'Map Proposal Content to Funding Criteria', phase:'1.5', dur:3, ES:10,EF:12,LS:10,LF:12, float:0, critical:true },
-  { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes', phase:'1.5', dur:3, ES:9, EF:11,LS:10,LF:12, float:1, critical:false },
-  { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics', phase:'1.5', dur:2, ES:10,EF:11,LS:11,LF:12, float:1, critical:false },
-  { id:'1.5.4', name:'Assemble and Review Final Submission Package', phase:'1.5', dur:3, ES:11,EF:13,LS:11,LF:13, float:0, critical:true },
-  { id:'1.5.5', name:'Create Success Measurement Tracking Framework', phase:'1.5', dur:2, ES:11,EF:12,LS:12,LF:13, float:1, critical:false },
+  { id:'1.5.1', name:'Map Proposal Content to Funding Criteria', phase:'1.5', dur:3, ES:10,EF:11,LS:10,LF:11, float:0, critical:true },
+  { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes', phase:'1.5', dur:3, ES:12, EF:13,LS:12,LF:13, float:0, critical:true },
+  { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
+  { id:'1.5.4', name:'Assemble and Review Final Submission Package', phase:'1.5', dur:3, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
+  { id:'1.5.5', name:'Create Success Measurement Tracking Framework', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
   { id:'END', name:'PROJECT END', phase:'1.5', dur:0, ES:13,EF:13,LS:13,LF:13, float:0, critical:true, isEnd:true },
 ];
 
@@ -1468,21 +1475,72 @@ addMarker('arr-cp', CP);
 addMarker('arr-gray', '#AAAAAA');
 svg.appendChild(defs);
 
-// Draw edges
+// Draw edges with orthogonal routing
 const edgeGroup = mkEl('g', { id:'edges' });
+
+// Track entry points for nodes receiving multiple arrows (for staggering)
+const entryOffsets = {};
+EDGES.forEach(([fromId, toId]) => {
+  if (!entryOffsets[toId]) entryOffsets[toId] = [];
+  entryOffsets[toId].push(fromId);
+});
+
+// Calculate staggered entry Y positions for nodes with multiple incoming edges
+function getEntryY(toId, fromId) {
+  const entries = entryOffsets[toId];
+  if (entries.length <= 1) return nodeY(toId) + NH/2;
+  const idx = entries.indexOf(fromId);
+  const totalEntries = entries.length;
+  const spacing = Math.min(16, (NH - 30) / (totalEntries - 1));
+  const startY = nodeY(toId) + NH/2 - (spacing * (totalEntries - 1)) / 2;
+  return startY + idx * spacing;
+}
+
 EDGES.forEach(([fromId, toId]) => {
   const cp = isEdgeCritical(fromId, toId);
-  const color = cp ? CP : '#BBBBBB';
+  const color = cp ? CP : '#999999';
   const marker = cp ? 'arr-cp' : 'arr-gray';
+  const strokeWidth = cp ? '2.5' : '1.5';
+  const opacity = cp ? '1' : '0.7';
+  
   const fx = nodeX(fromId) + NW, fy = nodeY(fromId) + NH/2;
-  const tx = nodeX(toId), ty = nodeY(toId) + NH/2;
+  const tx = nodeX(toId), ty = getEntryY(toId, fromId);
   const fromRow = POSITIONS[fromId][1], toRow = POSITIONS[toId][1];
   const fromCol = POSITIONS[fromId][0], toCol = POSITIONS[toId][0];
+  
   let pathD;
-  if (fromRow === toRow) pathD = `M${fx},${fy} L${tx},${ty}`;
-  else if (toCol > fromCol) { const midX = fx + (tx - fx) / 2; pathD = `M${fx},${fy} C${midX},${fy} ${midX},${ty} ${tx},${ty}`; }
-  else { const midX = Math.min(fx, tx) - 20; pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`; }
-  edgeGroup.appendChild(mkEl('path', { d: pathD, fill: 'none', stroke: color, 'stroke-width': cp ? '2.5' : '1.5', 'marker-end': `url(#${marker})`, opacity: cp ? '1' : '0.6' }));
+  let midX, midY;
+  
+  if (fromRow === toRow && toCol > fromCol) {
+    // Same row, going right: straight horizontal line
+    pathD = `M${fx},${fy} L${tx},${ty}`;
+    midX = (fx + tx) / 2;
+    midY = fy;
+  } else if (toCol > fromCol) {
+    // Different row, going right: exit right, go vertical, enter left
+    const hGap = tx - fx;
+    const turnX = fx + hGap / 2;
+    pathD = `M${fx},${fy} L${turnX},${fy} L${turnX},${ty} L${tx},${ty}`;
+    midX = turnX;
+    midY = (fy + ty) / 2;
+  } else {
+    // Going left or same column: route around
+    const offsetX = 20;
+    const turnX = Math.min(fx, tx) - offsetX;
+    pathD = `M${fx},${fy} L${fx + 10},${fy} L${fx + 10},${fy + (ty > fy ? 15 : -15)} L${turnX},${fy + (ty > fy ? 15 : -15)} L${turnX},${ty} L${tx},${ty}`;
+    midX = turnX;
+    midY = (fy + ty) / 2;
+  }
+  
+  // Draw the path
+  edgeGroup.appendChild(mkEl('path', { 
+    d: pathD, 
+    fill: 'none', 
+    stroke: color, 
+    'stroke-width': strokeWidth, 
+    'marker-end': `url(#${marker})`, 
+    opacity: opacity 
+  }));
 });
 svg.appendChild(edgeGroup);
 
@@ -1550,7 +1608,9 @@ NODES.forEach(node => {
     lblEl.textContent = lbl;
     g.appendChild(lblEl);
     const valEl = mkEl('text', { x:cx, y:cy+18, 'text-anchor':'middle', fill:'#1A1A2E', 'font-size':'7.5', 'font-weight':'700', 'font-family':'Inter,sans-serif' });
-    valEl.textContent = WEEK_DATES[node[lbl]];
+    // Use end-of-week dates for EF and LF, start-of-week dates for ES and LS
+    const dateMap = (lbl === 'EF' || lbl === 'LF') ? WEEK_END_DATES : WEEK_DATES;
+    valEl.textContent = dateMap[node[lbl]];
     g.appendChild(valEl);
   });
   g.appendChild(mkEl('line', { x1:colW, y1:gridY, x2:colW, y2:gridY+52, stroke:'#EEF0F5', 'stroke-width':'1' }));
