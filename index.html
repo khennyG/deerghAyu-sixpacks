@@ -1799,18 +1799,32 @@ sortedEdges.forEach(([fromId, toId]) => {
     const belowY = nodeY(fromId) + NH + 45;
     pathD = `M${fx},${fy} L${fx + 30},${fy} L${fx + 30},${belowY} L${tx},${belowY} L${tx},${ty}`;
   }
-  // Arrows into 1.5.4 from 1.5.2, 1.5.3, 1.5.5
-  else if (toId === '1.5.4' && (fromId === '1.5.2' || fromId === '1.5.3' || fromId === '1.5.5')) {
+  // Arrows into 1.5.4 from 1.5.2, 1.5.3, 1.5.5 - clean orthogonal routing
+  else if (toId === '1.5.4' && fromId === '1.5.3') {
+    // 1.5.3 same row - straight horizontal line to middle
     const fx = nodeX(fromId) + NW;
     const fy = nodeY(fromId) + NH * 0.5;
     const tx = nodeX(toId);
-    const ty = getEntryYFor154(fromId);
-    if (fromRow === toRow) {
-      pathD = `M${fx},${fy} L${tx},${ty}`;
-    } else {
-      const midX = fx + (tx - fx) * 0.5;
-      pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
-    }
+    const ty = nodeY(toId) + NH * 0.5;
+    pathD = `M${fx},${fy} L${tx},${ty}`;
+  }
+  else if (toId === '1.5.4' && fromId === '1.5.2') {
+    // 1.5.2 above - exit right, go to right edge, then down to upper entry
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.25;
+    const midX = tx - 15;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  else if (toId === '1.5.4' && fromId === '1.5.5') {
+    // 1.5.5 below - exit right, go to right edge, then up to lower entry
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.75;
+    const midX = tx - 15;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
   }
   // Same row: straight horizontal line
   else if (fromRow === toRow && toCol > fromCol) {
