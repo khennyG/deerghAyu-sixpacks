@@ -1628,31 +1628,31 @@ const WEEK_END_DATES = {
 };
 
 const NODES = [
-  { id:'START', name:'PROJECT START', phase:'1.1', dur:0, ES:3, EF:3, LS:3, LF:3, float:0, critical:true, isStart:true },
-  { id:'1.1.1', name:'Draft Charter and Define Scope',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true },
-  { id:'1.1.2', name:'Build WBS Outline and Numbering',       phase:'1.1', dur:2, ES:4, EF:6, LS:4, LF:6,  float:0, critical:true },
-  { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline', phase:'1.1', dur:2, ES:7, EF:7, LS:9, LF:9,  float:2, critical:false },
-  { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan', phase:'1.1', dur:2, ES:8, EF:9, LS:10, LF:10,  float:2, critical:false },
-  { id:'1.1.5', name:'Create Risk Register and Score Risks',  phase:'1.1', dur:2, ES:9, EF:10, LS:10, LF:11, float:1, critical:false },
-  { id:'1.1.6', name:'Draft Governance and Change Control Approach', phase:'1.1', dur:2, ES:11, EF:11, LS:12,LF:12, float:1, critical:false },
-  { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',    phase:'1.1', dur:2, ES:11, EF:11,LS:12,LF:12, float:1, critical:false },
-  { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort', phase:'1.2', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
-  { id:'1.2.2', name:'Design Service Model and Workflow',     phase:'1.2', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
-  { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities', phase:'1.2', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
-  { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', phase:'1.2', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool', phase:'1.3', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
-  { id:'1.3.2', name:'Define Data Tracking Categories and Templates', phase:'1.3', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true },
-  { id:'1.3.3', name:'Design Doctor-Ready Summary Format',    phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach', phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.4.1', name:'Build Stakeholder Register',            phase:'1.4', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true },
-  { id:'1.4.2', name:'Draft Communications Plan',             phase:'1.4', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true },
-  { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials', phase:'1.4', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true },
-  { id:'1.5.1', name:'Map Proposal Content to Funding Criteria', phase:'1.5', dur:3, ES:10,EF:11,LS:10,LF:11, float:0, critical:true },
-  { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes', phase:'1.5', dur:3, ES:12, EF:13,LS:12,LF:13, float:0, critical:true },
-  { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
-  { id:'1.5.4', name:'Assemble and Review Final Submission Package', phase:'1.5', dur:3, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
-  { id:'1.5.5', name:'Create Success Measurement Tracking Framework', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true },
-  { id:'END', name:'PROJECT END', phase:'1.5', dur:0, ES:13,EF:13,LS:13,LF:13, float:0, critical:true, isEnd:true },
+  { id:'START', name:'PROJECT START', phase:'1.1', dur:0, ES:3, EF:3, LS:3, LF:3, float:0, critical:true, isStart:true, esDisplay:'Jan 21', efDisplay:'Jan 21', lsDisplay:'Jan 21', lfDisplay:'Jan 21' },
+  { id:'1.1.1', name:'Draft Charter and Define Scope',        phase:'1.1', dur:2, ES:3, EF:4, LS:3, LF:4,  float:0, critical:true, esDisplay:'Jan 21', efDisplay:'Feb 3', lsDisplay:'Jan 21', lfDisplay:'Feb 3' },
+  { id:'1.1.2', name:'Build WBS Outline and Numbering',       phase:'1.1', dur:2, ES:4, EF:6, LS:4, LF:6,  float:0, critical:true, esDisplay:'Jan 28', efDisplay:'Feb 17', lsDisplay:'Jan 28', lfDisplay:'Feb 17' },
+  { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline', phase:'1.1', dur:2, ES:7, EF:7, LS:9, LF:9,  float:2, critical:false, esDisplay:'Feb 18', efDisplay:'Feb 24', lsDisplay:'Mar 11', lfDisplay:'Mar 17' },
+  { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan', phase:'1.1', dur:2, ES:8, EF:9, LS:10, LF:10,  float:2, critical:false, esDisplay:'Feb 25', efDisplay:'Mar 10', lsDisplay:'Mar 18', lfDisplay:'Mar 24' },
+  { id:'1.1.5', name:'Create Risk Register and Score Risks',  phase:'1.1', dur:2, ES:9, EF:10, LS:10, LF:11, float:1, critical:false, esDisplay:'Mar 11', efDisplay:'Mar 24', lsDisplay:'Mar 18', lfDisplay:'Mar 31' },
+  { id:'1.1.6', name:'Draft Governance and Change Control Approach', phase:'1.1', dur:2, ES:11, EF:11, LS:12,LF:12, float:1, critical:false, esDisplay:'Mar 25', efDisplay:'Mar 31', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',    phase:'1.1', dur:2, ES:11, EF:11,LS:12,LF:12, float:1, critical:false, esDisplay:'Mar 25', efDisplay:'Mar 31', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort', phase:'1.2', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true, esDisplay:'Feb 4', efDisplay:'Feb 17', lsDisplay:'Feb 4', lfDisplay:'Feb 17' },
+  { id:'1.2.2', name:'Design Service Model and Workflow',     phase:'1.2', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true, esDisplay:'Feb 11', efDisplay:'Mar 3', lsDisplay:'Feb 11', lfDisplay:'Mar 3' },
+  { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities', phase:'1.2', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true, esDisplay:'Feb 18', efDisplay:'Mar 10', lsDisplay:'Feb 18', lfDisplay:'Mar 10' },
+  { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', phase:'1.2', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true, esDisplay:'Feb 25', efDisplay:'Mar 17', lsDisplay:'Feb 25', lfDisplay:'Mar 17' },
+  { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool', phase:'1.3', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true, esDisplay:'Feb 11', efDisplay:'Mar 3', lsDisplay:'Feb 11', lfDisplay:'Mar 3' },
+  { id:'1.3.2', name:'Define Data Tracking Categories and Templates', phase:'1.3', dur:3, ES:7, EF:9, LS:7, LF:9,  float:0, critical:true, esDisplay:'Feb 18', efDisplay:'Mar 10', lsDisplay:'Feb 18', lfDisplay:'Mar 10' },
+  { id:'1.3.3', name:'Design Doctor-Ready Summary Format',    phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true, esDisplay:'Feb 25', efDisplay:'Mar 17', lsDisplay:'Feb 25', lfDisplay:'Mar 17' },
+  { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach', phase:'1.3', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true, esDisplay:'Mar 4', efDisplay:'Mar 24', lsDisplay:'Mar 4', lfDisplay:'Mar 24' },
+  { id:'1.4.1', name:'Build Stakeholder Register',            phase:'1.4', dur:2, ES:5, EF:6, LS:5, LF:6,  float:0, critical:true, esDisplay:'Feb 4', efDisplay:'Feb 17', lsDisplay:'Feb 4', lfDisplay:'Feb 17' },
+  { id:'1.4.2', name:'Draft Communications Plan',             phase:'1.4', dur:3, ES:6, EF:8, LS:6, LF:8,  float:0, critical:true, esDisplay:'Feb 11', efDisplay:'Mar 3', lsDisplay:'Feb 11', lfDisplay:'Mar 3' },
+  { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials', phase:'1.4', dur:3, ES:8, EF:10,LS:8, LF:10, float:0, critical:true, esDisplay:'Feb 25', efDisplay:'Mar 17', lsDisplay:'Feb 25', lfDisplay:'Mar 17' },
+  { id:'1.5.1', name:'Map Proposal Content to Funding Criteria', phase:'1.5', dur:3, ES:10,EF:11,LS:10,LF:11, float:0, critical:true, esDisplay:'Mar 18', efDisplay:'Mar 31', lsDisplay:'Mar 18', lfDisplay:'Mar 31' },
+  { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes', phase:'1.5', dur:3, ES:12, EF:13,LS:12,LF:13, float:0, critical:true, esDisplay:'Apr 1', efDisplay:'Apr 7', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true, esDisplay:'Apr 1', efDisplay:'Apr 7', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'1.5.4', name:'Assemble and Review Final Submission Package', phase:'1.5', dur:3, ES:12,EF:13,LS:12,LF:13, float:0, critical:true, esDisplay:'Apr 1', efDisplay:'Apr 7', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'1.5.5', name:'Create Success Measurement Tracking Framework', phase:'1.5', dur:2, ES:12,EF:13,LS:12,LF:13, float:0, critical:true, esDisplay:'Apr 1', efDisplay:'Apr 7', lsDisplay:'Apr 1', lfDisplay:'Apr 7' },
+  { id:'END', name:'PROJECT END', phase:'1.5', dur:0, ES:13,EF:13,LS:13,LF:13, float:0, critical:true, isEnd:true, esDisplay:'Apr 8', efDisplay:'Apr 8', lsDisplay:'Apr 8', lfDisplay:'Apr 8' },
 ];
 
 const EDGES = [
@@ -1669,11 +1669,11 @@ const NW = 172, NH = 120, HGAP = 44, VGAP = 32;
 const MARGIN_X = 24, MARGIN_Y = 24;
 
 const POSITIONS = {
-  'START':[0,3],'1.1.1':[1,3],'1.1.2':[2,3],'1.1.3':[3,0],'1.1.4':[4,0],'1.1.5':[5,0],'1.1.6':[6,0],'1.1.7':[7,0],
+  'START':[0,3],'1.1.1':[1,3],'1.1.2':[2,3],'1.1.3':[3,1],'1.1.4':[4,1],'1.1.5':[5,1],'1.1.6':[6,1],'1.1.7':[7,1],
   '1.2.1':[3,2],'1.2.2':[4,2],'1.2.3':[5,2],'1.2.4':[6,2],
-  '1.3.1':[3,4],'1.3.2':[4,4],'1.3.3':[5,4],'1.3.4':[6,4],
-  '1.4.1':[3,6],'1.4.2':[4,6],'1.4.3':[5,6],
-  '1.5.1':[7,3],'1.5.2':[8,2],'1.5.3':[8,4],'1.5.4':[9,3],'1.5.5':[8,5],'END':[10,3],
+  '1.3.1':[3,3],'1.3.2':[4,3],'1.3.3':[5,3],'1.3.4':[6,3],
+  '1.4.1':[3,4],'1.4.2':[4,4],'1.4.3':[5,4],
+  '1.5.1':[7,3],'1.5.2':[8,2],'1.5.3':[8,3],'1.5.4':[9,3],'1.5.5':[8,4],'END':[10,3],
 };
 
 function nodeX(id) { return MARGIN_X + POSITIONS[id][0] * (NW + HGAP); }
@@ -1711,61 +1711,129 @@ addMarker('arr-cp', CP);
 addMarker('arr-gray', '#AAAAAA');
 svg.appendChild(defs);
 
-// Draw edges with orthogonal routing
+// Draw edges with ZERO-CROSSING orthogonal routing
 const edgeGroup = mkEl('g', { id:'edges' });
 
-// Track entry points for nodes receiving multiple arrows (for staggering)
-const entryOffsets = {};
-EDGES.forEach(([fromId, toId]) => {
-  if (!entryOffsets[toId]) entryOffsets[toId] = [];
-  entryOffsets[toId].push(fromId);
+// Sort edges: draw non-critical first so critical paths render on top
+const sortedEdges = [...EDGES].sort((a, b) => {
+  const aCrit = isEdgeCritical(a[0], a[1]);
+  const bCrit = isEdgeCritical(b[0], b[1]);
+  return aCrit - bCrit;
 });
 
-// Calculate staggered entry Y positions for nodes with multiple incoming edges
-function getEntryY(toId, fromId) {
-  const entries = entryOffsets[toId];
-  if (entries.length <= 1) return nodeY(toId) + NH/2;
-  const idx = entries.indexOf(fromId);
-  const totalEntries = entries.length;
-  const spacing = Math.min(16, (NH - 30) / (totalEntries - 1));
-  const startY = nodeY(toId) + NH/2 - (spacing * (totalEntries - 1)) / 2;
-  return startY + idx * spacing;
+// Stagger entry points for 1.5.4 which receives multiple arrows
+function getEntryYFor154(fromId) {
+  const order = ['1.5.2', '1.5.3', '1.5.5'];
+  const idx = order.indexOf(fromId);
+  if (idx === -1) return nodeY('1.5.4') + NH * 0.5;
+  const positions = [0.3, 0.5, 0.7];
+  return nodeY('1.5.4') + NH * positions[idx];
 }
 
-EDGES.forEach(([fromId, toId]) => {
+sortedEdges.forEach(([fromId, toId]) => {
   const cp = isEdgeCritical(fromId, toId);
-  const color = cp ? CP : '#999999';
+  const color = cp ? CP : '#888888';
   const marker = cp ? 'arr-cp' : 'arr-gray';
   const strokeWidth = cp ? '2.5' : '1.5';
-  const opacity = cp ? '1' : '0.7';
+  const opacity = cp ? '1' : '0.6';
   
-  const fx = nodeX(fromId) + NW, fy = nodeY(fromId) + NH/2;
-  const tx = nodeX(toId), ty = getEntryY(toId, fromId);
-  const fromRow = POSITIONS[fromId][1], toRow = POSITIONS[toId][1];
-  const fromCol = POSITIONS[fromId][0], toCol = POSITIONS[toId][0];
+  const fromCol = POSITIONS[fromId][0], fromRow = POSITIONS[fromId][1];
+  const toCol = POSITIONS[toId][0], toRow = POSITIONS[toId][1];
   
   let pathD;
-  let midX, midY;
   
-  if (fromRow === toRow && toCol > fromCol) {
-    // Same row, going right: straight horizontal line
+  // Special case: 1.1.1 -> 1.2.1 (row 3 to row 2) - exit right, go up, enter left
+  if (fromId === '1.1.1' && toId === '1.2.1') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.35;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    const midX = fx + (tx - fx) * 0.5;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  // Special case: 1.1.1 -> 1.4.1 (row 3 to row 4) - exit right, go down, enter left
+  else if (fromId === '1.1.1' && toId === '1.4.1') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.65;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    const midX = fx + (tx - fx) * 0.5;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  // Special case: 1.1.2 -> 1.1.3 (row 3 to row 1) - exit top, horizontal, enter left
+  else if (fromId === '1.1.2' && toId === '1.1.3') {
+    const fx = nodeX(fromId) + NW * 0.7;
+    const fy = nodeY(fromId);
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    const midY = fy - 20;
+    pathD = `M${fx},${fy} L${fx},${midY} L${tx - 15},${midY} L${tx - 15},${ty} L${tx},${ty}`;
+  }
+  // Special case: 1.1.2 -> 1.3.1 (same row now - row 3)
+  else if (fromId === '1.1.2' && toId === '1.3.1') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
     pathD = `M${fx},${fy} L${tx},${ty}`;
-    midX = (fx + tx) / 2;
-    midY = fy;
-  } else if (toCol > fromCol) {
-    // Different row, going right: exit right, go vertical, enter left
-    const hGap = tx - fx;
-    const turnX = fx + hGap / 2;
-    pathD = `M${fx},${fy} L${turnX},${fy} L${turnX},${ty} L${tx},${ty}`;
-    midX = turnX;
-    midY = (fy + ty) / 2;
-  } else {
-    // Going left or same column: route around
-    const offsetX = 20;
-    const turnX = Math.min(fx, tx) - offsetX;
-    pathD = `M${fx},${fy} L${fx + 10},${fy} L${fx + 10},${fy + (ty > fy ? 15 : -15)} L${turnX},${fy + (ty > fy ? 15 : -15)} L${turnX},${ty} L${tx},${ty}`;
-    midX = turnX;
-    midY = (fy + ty) / 2;
+  }
+  // Special case: 1.1.7 -> 1.5.4 (row 1 to row 3) - exit bottom, down, enter top
+  else if (fromId === '1.1.7' && toId === '1.5.4') {
+    const fx = nodeX(fromId) + NW * 0.5;
+    const fy = nodeY(fromId) + NH;
+    const tx = nodeX(toId) + NW * 0.5;
+    const ty = nodeY(toId);
+    const midY = fy + (ty - fy) * 0.5;
+    pathD = `M${fx},${fy} L${fx},${midY} L${tx},${midY} L${tx},${ty}`;
+  }
+  // Special case: 1.3.4 -> 1.5.4 (same row 3) - straight horizontal
+  else if (fromId === '1.3.4' && toId === '1.5.4') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    // Route through 1.5.1 and 1.5.3 area
+    const midX = nodeX('1.5.1') + NW + 20;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  // Arrows into 1.5.4 from 1.5.2, 1.5.3, 1.5.5
+  else if (toId === '1.5.4' && (fromId === '1.5.2' || fromId === '1.5.3' || fromId === '1.5.5')) {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = getEntryYFor154(fromId);
+    if (fromRow === toRow) {
+      pathD = `M${fx},${fy} L${tx},${ty}`;
+    } else {
+      const midX = fx + (tx - fx) * 0.5;
+      pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+    }
+  }
+  // Same row: straight horizontal line
+  else if (fromRow === toRow && toCol > fromCol) {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    pathD = `M${fx},${fy} L${tx},${ty}`;
+  }
+  // Different row, going right: orthogonal L-shape
+  else if (toCol > fromCol) {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    const midX = fx + (tx - fx) * 0.5;
+    pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  // Same column or going left (fallback)
+  else {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId);
+    const ty = nodeY(toId) + NH * 0.5;
+    const offsetX = 30;
+    pathD = `M${fx},${fy} L${fx + offsetX},${fy} L${fx + offsetX},${ty} L${tx},${ty}`;
   }
   
   // Draw the path
@@ -1844,9 +1912,9 @@ NODES.forEach(node => {
     lblEl.textContent = lbl;
     g.appendChild(lblEl);
     const valEl = mkEl('text', { x:cx, y:cy+18, 'text-anchor':'middle', fill:'#1A1A2E', 'font-size':'7.5', 'font-weight':'700', 'font-family':'Inter,sans-serif' });
-    // Use end-of-week dates for EF and LF, start-of-week dates for ES and LS
-    const dateMap = (lbl === 'EF' || lbl === 'LF') ? WEEK_END_DATES : WEEK_DATES;
-    valEl.textContent = dateMap[node[lbl]];
+    // Use hardcoded display properties directly
+    const displayKey = lbl.toLowerCase() + 'Display';
+    valEl.textContent = node[displayKey] || '';
     g.appendChild(valEl);
   });
   g.appendChild(mkEl('line', { x1:colW, y1:gridY, x2:colW, y2:gridY+52, stroke:'#EEF0F5', 'stroke-width':'1' }));
