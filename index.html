@@ -452,7 +452,14 @@
     ::-webkit-scrollbar {
       display: none;
     }
-    #network { display: none !important; }
+    /* Hide network for Gantt print, but allow when body has print-network class */
+    body:not(.print-network) #network { display: none !important; }
+    /* Hide gantt/charter/wbs when printing network */
+    body.print-network #gantt,
+    body.print-network #charter,
+    body.print-network #wbs,
+    body.print-network .tab-nav { display: none !important; }
+    body.print-network #network { display: block !important; }
   }
 
   /* ══════════════════════════════════════════════════════════════ */
@@ -1073,44 +1080,17 @@
   </div>
 </div>
 
-<!-- LEGEND -->
-<div class="net-legend-bar">
-  <span class="net-leg-label">Phases:</span>
-  <span class="net-leg" style="color:#1B5AB4;border-color:#1B5AB4;background:#EEF4FF"><span class="net-leg-dot" style="background:#1B5AB4"></span>1.1 Project Mgmt</span>
-  <span class="net-leg" style="color:#D4500A;border-color:#D4500A;background:#FFF1EB"><span class="net-leg-dot" style="background:#D4500A"></span>1.2 Program Design</span>
-  <span class="net-leg" style="color:#0A7A4A;border-color:#0A7A4A;background:#EDFAF4"><span class="net-leg-dot" style="background:#0A7A4A"></span>1.3 Technology &amp; Data</span>
-  <span class="net-leg" style="color:#6B2FAA;border-color:#6B2FAA;background:#F5EEFF"><span class="net-leg-dot" style="background:#6B2FAA"></span>1.4 Stakeholder &amp; Comms</span>
-  <span class="net-leg" style="color:#A07B00;border-color:#A07B00;background:#FFFAEB"><span class="net-leg-dot" style="background:#C49A00"></span>1.5 Funding &amp; Go-to-Market</span>
-  <span class="net-leg" style="color:#C0392B;border-color:#C0392B;background:#FFF0EE"><span class="net-leg-dot" style="background:#C0392B"></span>Critical Path (Float = 0)</span>
-  <span class="net-leg" style="color:#555;border-color:#ccc;background:#F8F8F8"><span class="net-leg-dot" style="background:#ccc"></span>Non-Critical (Float &gt; 0)</span>
-</div>
-
 <!-- NODE KEY -->
 <div class="net-node-key">
-  <div>
-    <div class="net-node-key-label">Node Structure (AON Format)</div>
-    <div class="net-node-sample">
-      <div class="ns-header"><span>1.1.1</span><span style="font-size:8px;font-weight:400">Phase 1.1</span></div>
-      <div class="ns-name">Charter &amp; Scope Statement</div>
-      <div class="ns-grid">
-        <div class="net-ns-cell"><div class="ns-lbl">ES</div><div class="ns-val">W3</div></div>
-        <div class="net-ns-cell"><div class="ns-lbl">EF</div><div class="ns-val">W4</div></div>
-        <div class="net-ns-cell"><div class="ns-lbl">LS</div><div class="ns-val">W3</div></div>
-        <div class="net-ns-cell"><div class="ns-lbl">LF</div><div class="ns-val">W4</div></div>
-        <div class="net-ns-cell" style="grid-column:span 2"><div class="ns-lbl">Duration</div><div class="ns-val">2 weeks</div></div>
-      </div>
-      <div class="net-ns-float" style="background:#FFF0EE;color:#C0392B">Float = 0 · CRITICAL PATH</div>
-    </div>
-  </div>
   <div class="net-key-notes">
     <div class="net-node-key-label">How to read this diagram</div>
-    <p><strong>ES</strong> = Earliest possible start week</p>
-    <p><strong>EF</strong> = Earliest possible finish week</p>
-    <p><strong>LS</strong> = Latest allowable start (without delaying project)</p>
-    <p><strong>LF</strong> = Latest allowable finish (without delaying project)</p>
-    <p><strong>Float</strong> = How many weeks a task can slip before delaying the project</p>
+    <p><strong>ES</strong> = Earliest possible start date</p>
+    <p><strong>EF</strong> = Earliest possible finish date</p>
+    <p><strong>LS</strong> = Latest allowable start date (without delaying project)</p>
+    <p><strong>LF</strong> = Latest allowable finish date (without delaying project)</p>
+    <p><strong>Float</strong> = How many days a task can slip before delaying the project</p>
     <p><strong>Float = 0</strong> = Critical Path - zero room for delay</p>
-    <p><strong>Arrows</strong> = Finish-to-Start dependency (predecessor must finish before successor starts)</p>
+    <p><strong>Arrows</strong> = Finish-to-Start dependency - predecessor must finish before successor starts</p>
   </div>
   <div class="net-key-notes">
     <div class="net-node-key-label">Critical Path Summary</div>
@@ -1122,9 +1102,10 @@
   </div>
   <div class="net-key-notes">
     <div class="net-node-key-label">Dependency Type</div>
-    <p>All dependencies: <strong>Finish-to-Start (FS)</strong></p>
-    <p>Predecessor must complete before successor starts.</p>
-    <div class="net-cp-badge">◆ Float = 0 means Critical Path</div>
+    <p>All dependencies are <strong>Finish-to-Start (FS)</strong></p>
+    <p>A predecessor task must be fully complete before the successor task can begin</p>
+    <p>All ES and EF dates reflect actual calendar dates from the project schedule</p>
+    <p><strong>Float = 0</strong> on all critical path tasks - any delay delays the project end date</p>
   </div>
 </div>
 
@@ -1760,14 +1741,15 @@ sortedEdges.forEach(([fromId, toId]) => {
     const midX = fx + (tx - fx) * 0.5;
     pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
   }
-  // Special case: 1.1.2 -> 1.1.3 (row 3 to row 1) - exit top, horizontal, enter left
+  // Special case: 1.1.2 -> 1.1.3 (row 3 to row 1) - exit top, go above row 1, enter top
   else if (fromId === '1.1.2' && toId === '1.1.3') {
-    const fx = nodeX(fromId) + NW * 0.7;
+    const fx = nodeX(fromId) + NW * 0.3;
     const fy = nodeY(fromId);
-    const tx = nodeX(toId);
-    const ty = nodeY(toId) + NH * 0.5;
-    const midY = fy - 20;
-    pathD = `M${fx},${fy} L${fx},${midY} L${tx - 15},${midY} L${tx - 15},${ty} L${tx},${ty}`;
+    const tx = nodeX(toId) + NW * 0.5;
+    const ty = nodeY(toId);
+    // Go up just above row 1, then right, then down to top of 1.1.3
+    const aboveRow1Y = ty - 20;
+    pathD = `M${fx},${fy} L${fx},${aboveRow1Y} L${tx},${aboveRow1Y} L${tx},${ty}`;
   }
   // Special case: 1.1.2 -> 1.3.1 (same row now - row 3)
   else if (fromId === '1.1.2' && toId === '1.3.1') {
@@ -1777,14 +1759,15 @@ sortedEdges.forEach(([fromId, toId]) => {
     const ty = nodeY(toId) + NH * 0.5;
     pathD = `M${fx},${fy} L${tx},${ty}`;
   }
-  // Special case: 1.1.7 -> 1.5.4 (row 1 to row 3) - exit bottom, down, enter top
+  // Special case: 1.1.7 -> 1.5.4 (row 1 to row 3) - exit right, stay below row 1, enter top
   else if (fromId === '1.1.7' && toId === '1.5.4') {
-    const fx = nodeX(fromId) + NW * 0.5;
-    const fy = nodeY(fromId) + NH;
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
     const tx = nodeX(toId) + NW * 0.5;
     const ty = nodeY(toId);
-    const midY = fy + (ty - fy) * 0.5;
-    pathD = `M${fx},${fy} L${fx},${midY} L${tx},${midY} L${tx},${ty}`;
+    // Route right from 1.1.7, then down below row 1 but above row 2, then to top of 1.5.4
+    const belowRow1Y = nodeY(fromId) + NH + 25;
+    pathD = `M${fx},${fy} L${tx},${fy} L${tx},${ty}`;
   }
   // Special case: 1.3.4 -> 1.5.4 (same row 3) - straight horizontal
   else if (fromId === '1.3.4' && toId === '1.5.4') {
@@ -1795,6 +1778,26 @@ sortedEdges.forEach(([fromId, toId]) => {
     // Route through 1.5.1 and 1.5.3 area
     const midX = nodeX('1.5.1') + NW + 20;
     pathD = `M${fx},${fy} L${midX},${fy} L${midX},${ty} L${tx},${ty}`;
+  }
+  // Special case: 1.4.3 -> 1.5.1 - route below row 4 to avoid passing through 1.3.4
+  else if (fromId === '1.4.3' && toId === '1.5.1') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId) + NW * 0.5;
+    const ty = nodeY(toId) + NH;
+    // Go right from 1.4.3, then down below row 4, then right and up to bottom of 1.5.1
+    const belowY = nodeY(fromId) + NH + 25;
+    pathD = `M${fx},${fy} L${fx + 30},${fy} L${fx + 30},${belowY} L${tx},${belowY} L${tx},${ty}`;
+  }
+  // Special case: 1.4.2 -> 1.5.1 - route below row 4 to avoid vertical line through 1.2.3, 1.3.3, 1.4.3
+  else if (fromId === '1.4.2' && toId === '1.5.1') {
+    const fx = nodeX(fromId) + NW;
+    const fy = nodeY(fromId) + NH * 0.5;
+    const tx = nodeX(toId) + NW * 0.5;
+    const ty = nodeY(toId) + NH;
+    // Go right from 1.4.2, then down below row 4, then right and up to bottom of 1.5.1
+    const belowY = nodeY(fromId) + NH + 45;
+    pathD = `M${fx},${fy} L${fx + 30},${fy} L${fx + 30},${belowY} L${tx},${belowY} L${tx},${ty}`;
   }
   // Arrows into 1.5.4 from 1.5.2, 1.5.3, 1.5.5
   else if (toId === '1.5.4' && (fromId === '1.5.2' || fromId === '1.5.3' || fromId === '1.5.5')) {
@@ -1984,15 +1987,31 @@ function netExportPNG() {
 function netExportPDF() {
   const menu = document.getElementById('netExportMenu');
   menu.classList.remove('show');
-  // Hide gantt, show network for print
-  document.getElementById('gantt').style.display = 'none';
+  
+  // Store which tab was active before printing
+  const activeTab = document.querySelector('.tab-content[style*="display: block"]') || 
+                    document.querySelector('.tab-content:not([style*="display: none"])');
+  const activeTabId = activeTab ? activeTab.id : 'gantt';
+  
+  // Function to restore state after printing
+  function restoreAfterPrint() {
+    document.body.classList.remove('print-network');
+    // Hide all tabs, then show the originally active one
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById(activeTabId).style.display = 'block';
+    // Remove the event listener to avoid duplicates
+    window.removeEventListener('afterprint', restoreAfterPrint);
+  }
+  
+  // Listen for afterprint event (fires when print dialog closes)
+  window.addEventListener('afterprint', restoreAfterPrint);
+  
+  // Add print-network class to body for CSS print rules
+  document.body.classList.add('print-network');
+  // Show network section for printing
   document.getElementById('network').style.display = 'block';
+  
   window.print();
-  // Restore after print
-  setTimeout(() => {
-    document.getElementById('gantt').style.display = 'block';
-    document.getElementById('network').style.display = 'none';
-  }, 100);
 }
 </script>
 </body>
