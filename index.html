@@ -986,8 +986,8 @@
   </div>
   <div class="header-meta">
     <div class="meta-item">Project Start: <span>January 7, 2026</span></div>
-    <div class="meta-item">Project End: <span>April 8, 2026</span></div>
-    <div class="meta-item">Duration: <span>13 Weeks</span></div>
+    <div class="meta-item">Project End: <span>May 13, 2026</span></div>
+    <div class="meta-item">Duration: <span>18 Weeks</span></div>
     <div class="meta-item">Total Deliverables: <span>24</span></div>
     <div class="meta-item">Team Size: <span>6 members</span></div>
     <div class="meta-item">Client: <span>DeerghAyu Wellness Trust</span></div>
@@ -1040,9 +1040,9 @@
     <h4>Key Milestones</h4>
     <ul>
       <li>◆ Jan 28 - Charter Submitted</li>
-      <li>◆ Feb 7 &nbsp;- WBS Complete</li>
-      <li>◆ 3/1 &nbsp;&nbsp;&nbsp;- First Plan Draft</li>
-      <li>◆ Apr 1 &nbsp;- Final Project Plan Draft</li>
+      <li>◆ Feb 17 - WBS Complete</li>
+      <li>◆ Apr 29 - First Plan Draft</li>
+      <li>◆ May 6 &nbsp;- Final Project Plan Draft</li>
     </ul>
   </div>
   <div class="footer-section">
@@ -1084,7 +1084,7 @@
     <div>Project: <span>DeerghAyu Wellness Trust - AI-Enabled Elder Health Management</span></div>
     <div>Project Manager: <span>Kehinde Obidele</span></div>
     <div>Sponsor: <span>Ashok Ranade</span></div>
-    <div>Timeline: <span>Jan 7 – Apr 8, 2026 (13 Weeks)</span></div>
+    <div>Timeline: <span>Jan 7 – May 13, 2026 (18 Weeks)</span></div>
   </div>
 </div>
 
@@ -1161,10 +1161,10 @@ function showTab(name) {
 // ══════════════════════════════════════════════════════════════
 const WEEK_W  = 24;   // px per week column
 const START   = new Date(2026, 0, 7); // Jan 7, 2026 (Mon)
-const N_WEEKS = 13;
+const N_WEEKS = 18;
 
 // Hardcoded week date labels
-const WEEK_DATES = ['Jan 7','Jan 14','Jan 21','Jan 28','Feb 4','Feb 11','Feb 18','Feb 25','Mar 11','Mar 18','Mar 25','Apr 1','Apr 8'];
+const WEEK_DATES = ['Jan 7','Jan 14','Jan 21','Jan 28','Feb 4','Feb 11','Feb 18','Feb 25','Mar 4','Mar 11','Mar 18','Mar 25','Apr 1','Apr 8','Apr 15','Apr 22','Apr 29','May 6'];
 
 // Team colors
 const OWNERS = {
@@ -1223,7 +1223,7 @@ const PHASES = [
       { id:'1.1.3', name:'Identify Milestones and Draft Schedule Baseline',         sw:7,  ew:7,  owner:'KO', critical:true, progress:80 },
       { id:'1.1.4', name:'Estimate Effort and Draft Budget & Resource Plan',            sw:8,  ew:9,  owner:'DM', progress:60 },
       { id:'1.1.5', name:'Create Risk Register and Score Risks',                  sw:10,  ew:11,  owner:'KO', progress:40 },
-      { id:'M3',    name:'◆ First Draft Plan Due',            sw:8,  ew:8,  owner:'KO', milestone:true, progress:0 },
+      { id:'M3',    name:'◆ First Draft Plan Due',            sw:17,  ew:17,  owner:'KO', milestone:true, progress:0 },
       { id:'1.1.6', name:'Draft Governance and Change Control Approach',  sw:12,  ew:12,  owner:'KO', progress:20 },
       { id:'1.1.7', name:'Assign Roles and Build RACI Matrix',                       sw:12,  ew:12, owner:'SR', progress:0 },
     ]
@@ -1231,38 +1231,38 @@ const PHASES = [
   {
     id:'1.2', name:'Program Design Package', color:'1.2',
     tasks:[
-      { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort',          sw:5, ew:6, owner:'DM', progress:90 },
-      { id:'1.2.2', name:'Design Service Model and Workflow',        sw:6, ew:8, owner:'DM', critical:true, progress:70 },
-      { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities',          sw:7, ew:9, owner:'RN', progress:50 },
-      { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', sw:8, ew:10, owner:'LR', progress:20 },
+      { id:'1.2.1', name:'Define Eligibility Criteria for Senior Cohort',          sw:9, ew:10, owner:'DM', progress:90 },
+      { id:'1.2.2', name:'Design Service Model and Workflow',        sw:10, ew:12, owner:'DM', critical:true, progress:70 },
+      { id:'1.2.3', name:'Define Caregiver Involvement and Responsibilities',          sw:11, ew:13, owner:'RN', progress:50 },
+      { id:'1.2.4', name:'Draft Training Approach and Learning Objectives', sw:12, ew:14, owner:'LR', progress:20 },
     ]
   },
   {
     id:'1.3', name:'Technology & Data Package', color:'1.3',
     tasks:[
-      { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool',           sw:6, ew:8, owner:'ZH', critical:true, progress:60 },
-      { id:'1.3.2', name:'Define Data Tracking Categories and Templates',      sw:7, ew:9, owner:'ZH', progress:40 },
-      { id:'1.3.3', name:'Design Doctor-Ready Summary Format',         sw:8, ew:10, owner:'ZH', progress:20 },
-      { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach',  sw:9, ew:11, owner:'ZH', progress:0 },
+      { id:'1.3.1', name:'Gather Functional Requirements for PHA Tool',           sw:10, ew:12, owner:'ZH', critical:true, progress:60 },
+      { id:'1.3.2', name:'Define Data Tracking Categories and Templates',      sw:11, ew:13, owner:'ZH', progress:40 },
+      { id:'1.3.3', name:'Design Doctor-Ready Summary Format',         sw:12, ew:14, owner:'ZH', progress:20 },
+      { id:'1.3.4', name:'Draft Privacy, Consent and Security Approach',  sw:13, ew:15, owner:'ZH', progress:0 },
     ]
   },
   {
     id:'1.4', name:'Stakeholder & Communications Package', color:'1.4',
     tasks:[
-      { id:'1.4.1', name:'Build Stakeholder Register',              sw:5, ew:6, owner:'SR', progress:90 },
-      { id:'1.4.2', name:'Draft Communications Plan',               sw:6, ew:8, owner:'RN', critical:true, progress:60 },
-      { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials',      sw:8, ew:10, owner:'SR', progress:20 },
+      { id:'1.4.1', name:'Build Stakeholder Register',              sw:9, ew:10, owner:'SR', progress:90 },
+      { id:'1.4.2', name:'Draft Communications Plan',               sw:10, ew:12, owner:'RN', critical:true, progress:60 },
+      { id:'1.4.3', name:'Create Partner Outreach and Engagement Materials',      sw:12, ew:14, owner:'SR', progress:20 },
     ]
   },
   {
     id:'1.5', name:'Funding & Go-to-Market Package', color:'1.5',
     tasks:[
-      { id:'1.5.1', name:'Map Proposal Content to Funding Criteria',     sw:11,  ew:12, owner:'LR', critical:true, progress:20 },
-      { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes',             sw:13,  ew:13, owner:'LR', critical:true, progress:10 },
-      { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics',              sw:13, ew:13, owner:'DM', progress:0 },
-      { id:'1.5.4', name:'Assemble and Review Final Submission Package', sw:13, ew:13, owner:'KO', critical:true, progress:0 },
-      { id:'1.5.5', name:'Create Success Measurement Tracking Framework',                sw:13, ew:13, owner:'SR', progress:0 },
-      { id:'M4',    name:'◆ Final Submission - Apr 1',               sw:13, ew:13, owner:'KO', milestone:true, progress:0 },
+      { id:'1.5.1', name:'Map Proposal Content to Funding Criteria',     sw:15,  ew:16, owner:'LR', critical:true, progress:20 },
+      { id:'1.5.2', name:'Build ROI Story with Measurable Outcomes',             sw:17,  ew:17, owner:'LR', critical:true, progress:10 },
+      { id:'1.5.3', name:'Define Pilot Phases Timeline and Success Metrics',              sw:17, ew:17, owner:'DM', progress:0 },
+      { id:'1.5.4', name:'Assemble and Review Final Submission Package', sw:18, ew:18, owner:'KO', critical:true, progress:0 },
+      { id:'1.5.5', name:'Create Success Measurement Tracking Framework',                sw:17, ew:17, owner:'SR', progress:0 },
+      { id:'M4',    name:'◆ Final Submission - May 6',               sw:18, ew:18, owner:'KO', milestone:true, progress:0 },
     ]
   }
 ];
@@ -1277,7 +1277,6 @@ r1.className = 'col-header';
 const fixedCols = [
   {label:'WBS ID',      cls:'col-id',    rowspan:3},
   {label:'Task / Deliverable', cls:'col-task', rowspan:3},
-  {label:'Assigned To', cls:'col-owner', rowspan:3},
   {label:'Start Date',  cls:'col-start', rowspan:3},
   {label:'End Date',    cls:'col-end',   rowspan:3},
   {label:'Duration (days)',    cls:'col-dur',   rowspan:3},
@@ -1359,7 +1358,7 @@ PHASES.forEach(phase => {
   phRow.style.cssText = `background:${pc.light}`;
 
   const phTd = document.createElement('td');
-  phTd.colSpan = 7 + N_WEEKS;
+  phTd.colSpan = 6 + N_WEEKS;
   phTd.style.cssText = `padding:7px 12px;border-bottom:1px solid #DDE2EC;
     border-top:2px solid ${pc.bar}`;
   phTd.innerHTML = `
@@ -1405,13 +1404,6 @@ PHASES.forEach(phase => {
       ? `<span style="display:inline-block;width:7px;height:7px;background:#C0392B;transform:rotate(45deg);margin-right:6px;vertical-align:middle"></span>${task.name}`
       : task.name;
     tr.appendChild(tdTask);
-
-    // Owner
-    const tdOwner = document.createElement('td');
-    tdOwner.className = 'td-owner';
-    tdOwner.style.cssText = `border:1px solid #EEF0F5;padding:5px 6px`;
-    tdOwner.innerHTML = `<span class="owner-chip" style="background:${owner.color}">${owner.name}</span>`;
-    tr.appendChild(tdOwner);
 
     // Start date
     const tdStart = document.createElement('td');
